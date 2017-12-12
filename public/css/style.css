@@ -1,0 +1,18 @@
+/*
+//////////////////////////////////////////////////
+
+	For Custom CSS
+	by: WCC-Foundation
+
+//////////////////////////////////////////////////
+*/
+
+.notification{
+	position: absolute;
+	display: none;
+	min-width: 250px;
+}
+
+.tabs-body-custom{
+	min-height:500px;
+}
