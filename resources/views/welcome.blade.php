@@ -1,13 +1,10 @@
 @extends('layouts.app')
 
 @section('js')
-    <script>
-        $(document).ready(function(){
-        });
-    </script>
 @stop
 
 @section('content')
+<!-- <div class="animation-in"></div> -->
 <div class="flex-center position-ref full-height">
     <div class="content">
         <div class="title m-b-md position-ref" id="title">
