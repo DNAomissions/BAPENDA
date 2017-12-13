@@ -1,5 +1,13 @@
 @extends('layouts.app')
 
+@section('js')
+    <script>
+        $(document).ready(function(){
+            $("#dataTable").DataTable();
+        });
+    </script>
+@stop
+
 @section('content')
 <div class="container">
     <div class="row">
@@ -124,12 +132,7 @@
                                         </ol>
                                     </div>
                                     <div role="tabpanel" class="tab-pane" id="gu">
-                                        Ini Ganti Uang BPP :
-                                        <br>
-                                        <ol>
-                                            <li>Disini Ada Table GU punya si user BPP itu sendiri</li>
-                                            <li>Ada fitur tambah GU juga.. Nanti ngelink ke formnya</li>
-                                        </ol>
+                                        @include('resource.bpp.table-gu')
                                     </div>
                                     <div role="tabpanel" class="tab-pane" id="ls">
                                         Ini Langsung BPP :

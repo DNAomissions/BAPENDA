@@ -39,6 +39,7 @@
                             </div>
                         </div>
                     </form>
+                    <a class="btn btn-danger" href="{{url('/')}}"><i class="fa fa-fw fa-arrow-left"></i> Back</a>
                 </div>
             </div>
         </div>

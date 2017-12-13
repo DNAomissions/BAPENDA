@@ -11,8 +11,72 @@
 	position: absolute;
 	display: none;
 	min-width: 250px;
+	height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+}
+
+.select-option {
+	height:100px;
 }
 
 .tabs-body-custom{
 	min-height:500px;
+}
+
+.full-height {
+	height: 100vh;
+}
+
+.flex-center {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+.position-ref {
+	position: relative;
+}
+
+.position-abs {
+	position: absolute;
+}
+
+.top-right {
+	position: absolute;
+	right: 10px;
+	top: 18px;
+}
+
+.content {
+	text-align: inherit;
+}
+
+.title {
+	font-size: 84px;
+	text-align: center;
+	max-width:700px;
+}
+
+.image-title {
+	position: relative;
+	max-width: 500px;
+}
+
+.image-brand {
+	max-width: 100px;
+}
+
+.links > a {
+	color: #636b6f;
+	padding: 0 25px;
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: .1rem;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.m-b-md {
+	margin-bottom: 30px;
 }

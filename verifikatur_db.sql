@@ -16,6 +16,55 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`verifikatur_db` /*!40100 DEFAULT CHARAC
 
 USE `verifikatur_db`;
 
+/*Table structure for table `bpp` */
+
+DROP TABLE IF EXISTS `bpp`;
+
+CREATE TABLE `bpp` (
+  `id_bpp` int(11) NOT NULL AUTO_INCREMENT,
+  `nama_bpp` varchar(255) NOT NULL,
+  `unit_kerja` varchar(255) NOT NULL,
+  `alamat` text NOT NULL,
+  `no_telepon` varchar(20) NOT NULL,
+  PRIMARY KEY (`id_bpp`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `bpp` */
+
+/*Table structure for table `gu` */
+
+DROP TABLE IF EXISTS `gu`;
+
+CREATE TABLE `gu` (
+  `id_gu` int(11) NOT NULL AUTO_INCREMENT,
+  `kode_kegiatan` varchar(20) NOT NULL,
+  `id_bpp` int(11) NOT NULL,
+  `surat_permohonan` varchar(255) DEFAULT NULL,
+  `buku_kas_umum` varchar(255) DEFAULT NULL,
+  `laporan_pertanggungjawaban` varchar(255) DEFAULT NULL,
+  `sptbl` varchar(255) DEFAULT NULL,
+  `rekap_pajak_sipkd` varchar(255) DEFAULT NULL,
+  `kwitansi` varchar(255) DEFAULT NULL,
+  `spp_n_faktur_pajak` varchar(255) DEFAULT NULL,
+  `dokumentasi` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id_gu`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `gu` */
+
+/*Table structure for table `kegiatan` */
+
+DROP TABLE IF EXISTS `kegiatan`;
+
+CREATE TABLE `kegiatan` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kode_kegiatan` varchar(20) NOT NULL,
+  `program_kegiatan` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `kegiatan` */
+
 /*Table structure for table `level` */
 
 DROP TABLE IF EXISTS `level`;
@@ -49,6 +98,7 @@ DROP TABLE IF EXISTS `users`;
 
 CREATE TABLE `users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id_bpp` int(11) DEFAULT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `username` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -64,7 +114,7 @@ CREATE TABLE `users` (
 
 /*Data for the table `users` */
 
-insert  into `users`(`id`,`name`,`username`,`email`,`password`,`remember_token`,`level`,`created_at`,`updated_at`) values (1,'Daniel D Fortuna','dna2ln48','danieldwifortuna48@gmail.com','$2y$10$e.DuqREIGyGYf9xF/kkzseSYWv9.rYJaABGMuy5JorkaQTKzCu62W','18hASDx7Yfl3cTQ8F7ZzmHCYGjhNEX1924sMMlMPg5txppsYXERWBrDrSAWj',1,'2017-12-11 17:11:49','2017-12-11 17:11:49'),(2,'Ini Verifikator','verifikator','verifikator@verifikator.com','$2y$10$iVlppdy.ZSVlb6Xz2y3PC.Ur7e9xdweZbBUjhU5iXW8U1sFZSvnHS','SZwMyOXsnGDm3PskPWAb9nPDmvjnc67K1QTFCiHNkyDVdwGOWT3q0UZznRvg',2,'2017-12-11 17:48:36','2017-12-11 17:48:36'),(3,'Ini BPP','bpp','bpp@bpp.com','$2y$10$XkDFlczrIj9VyNoksNX/UuuOERWdLCm3ySwHlSjCHEhHuJR1mpNGS','XJlh90pY3JFbmFRNSyfEaGlQ5yqTvkoWIF90Yr0b2OD0FwkSkkr4DwgxwoSG',3,'2017-12-11 17:52:35','2017-12-11 17:52:35'),(4,'admin','admin','admin@admin.com','$2y$10$6fftZbXaVsUWlMIu9vvzseKROV9YTHyBF5TrmSnXJHSu4ATcy1awq','yNhyt7ypZR0V14NKcHPtWXNJ1R7YfrMOoYOhUevmECQxjfK6GM4KH9PeGg2u',1,'2017-12-12 02:53:41','2017-12-12 02:53:41');
+insert  into `users`(`id`,`id_bpp`,`name`,`username`,`email`,`password`,`remember_token`,`level`,`created_at`,`updated_at`) values (1,NULL,'Daniel D Fortuna','dna2ln48','danieldwifortuna48@gmail.com','$2y$10$e.DuqREIGyGYf9xF/kkzseSYWv9.rYJaABGMuy5JorkaQTKzCu62W','18hASDx7Yfl3cTQ8F7ZzmHCYGjhNEX1924sMMlMPg5txppsYXERWBrDrSAWj',1,'2017-12-11 17:11:49','2017-12-11 17:11:49'),(2,NULL,'Ini Verifikator','verifikator','verifikator@verifikator.com','$2y$10$iVlppdy.ZSVlb6Xz2y3PC.Ur7e9xdweZbBUjhU5iXW8U1sFZSvnHS','l8M3367iwOqO3cbR8SQ3TuEekQilvMHPvemtHLUIMM0xKhi7Kaxnt3G1TRlb',2,'2017-12-11 17:48:36','2017-12-11 17:48:36'),(3,NULL,'Ini BPP','bpp','bpp@bpp.com','$2y$10$XkDFlczrIj9VyNoksNX/UuuOERWdLCm3ySwHlSjCHEhHuJR1mpNGS','QeWjM3ZoBUGvH10r5L3VIzCk7TAJ95Y0niCNkKwqQvfe4ldHNQkBwQK6IAyF',3,'2017-12-11 17:52:35','2017-12-11 17:52:35'),(4,NULL,'admin','admin','admin@admin.com','$2y$10$6fftZbXaVsUWlMIu9vvzseKROV9YTHyBF5TrmSnXJHSu4ATcy1awq','zKe608w1rvb01wBJ7bAAVZyXjkN84r56GFdTGIIgb9QPGYSE5QtwHBbHdygg',1,'2017-12-12 02:53:41','2017-12-12 02:53:41');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
