@@ -47,6 +47,9 @@ CREATE TABLE `gu` (
   `kwitansi` varchar(255) DEFAULT NULL,
   `spp_n_faktur_pajak` varchar(255) DEFAULT NULL,
   `dokumentasi` varchar(255) DEFAULT NULL,
+  `status` varchar(255) NOT NULL,
+  `create_at` timestamp NULL DEFAULT NULL,
+  `update_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id_gu`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -114,7 +117,7 @@ CREATE TABLE `users` (
 
 /*Data for the table `users` */
 
-insert  into `users`(`id`,`id_bpp`,`name`,`username`,`email`,`password`,`remember_token`,`level`,`created_at`,`updated_at`) values (1,NULL,'Daniel D Fortuna','dna2ln48','danieldwifortuna48@gmail.com','$2y$10$e.DuqREIGyGYf9xF/kkzseSYWv9.rYJaABGMuy5JorkaQTKzCu62W','18hASDx7Yfl3cTQ8F7ZzmHCYGjhNEX1924sMMlMPg5txppsYXERWBrDrSAWj',1,'2017-12-11 17:11:49','2017-12-11 17:11:49'),(2,NULL,'Ini Verifikator','verifikator','verifikator@verifikator.com','$2y$10$iVlppdy.ZSVlb6Xz2y3PC.Ur7e9xdweZbBUjhU5iXW8U1sFZSvnHS','l8M3367iwOqO3cbR8SQ3TuEekQilvMHPvemtHLUIMM0xKhi7Kaxnt3G1TRlb',2,'2017-12-11 17:48:36','2017-12-11 17:48:36'),(3,NULL,'Ini BPP','bpp','bpp@bpp.com','$2y$10$XkDFlczrIj9VyNoksNX/UuuOERWdLCm3ySwHlSjCHEhHuJR1mpNGS','QeWjM3ZoBUGvH10r5L3VIzCk7TAJ95Y0niCNkKwqQvfe4ldHNQkBwQK6IAyF',3,'2017-12-11 17:52:35','2017-12-11 17:52:35'),(4,NULL,'admin','admin','admin@admin.com','$2y$10$6fftZbXaVsUWlMIu9vvzseKROV9YTHyBF5TrmSnXJHSu4ATcy1awq','zKe608w1rvb01wBJ7bAAVZyXjkN84r56GFdTGIIgb9QPGYSE5QtwHBbHdygg',1,'2017-12-12 02:53:41','2017-12-12 02:53:41');
+insert  into `users`(`id`,`id_bpp`,`name`,`username`,`email`,`password`,`remember_token`,`level`,`created_at`,`updated_at`) values (1,NULL,'Daniel D Fortuna','dna2ln48','danieldwifortuna48@gmail.com','$2y$10$e.DuqREIGyGYf9xF/kkzseSYWv9.rYJaABGMuy5JorkaQTKzCu62W','18hASDx7Yfl3cTQ8F7ZzmHCYGjhNEX1924sMMlMPg5txppsYXERWBrDrSAWj',1,'2017-12-11 17:11:49','2017-12-11 17:11:49'),(2,NULL,'Ini Verifikator','verifikator','verifikator@verifikator.com','$2y$10$iVlppdy.ZSVlb6Xz2y3PC.Ur7e9xdweZbBUjhU5iXW8U1sFZSvnHS','l8M3367iwOqO3cbR8SQ3TuEekQilvMHPvemtHLUIMM0xKhi7Kaxnt3G1TRlb',2,'2017-12-11 17:48:36','2017-12-11 17:48:36'),(3,NULL,'Ini BPP','bpp','bpp@bpp.com','$2y$10$XkDFlczrIj9VyNoksNX/UuuOERWdLCm3ySwHlSjCHEhHuJR1mpNGS','72987d3fl65xgCWacXlLLjPDgZycSzoEk3u42vGOyOIcmHGKPnhQ9NNyglbA',3,'2017-12-11 17:52:35','2017-12-11 17:52:35'),(4,NULL,'admin','admin','admin@admin.com','$2y$10$6fftZbXaVsUWlMIu9vvzseKROV9YTHyBF5TrmSnXJHSu4ATcy1awq','FNjEOgkftDSeLCXr5ZvLVKZ1qin1kHEWQuJin7b1JvaPfDGa7ZqA8L4SsXcU',1,'2017-12-12 02:53:41','2017-12-12 02:53:41');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
