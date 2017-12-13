@@ -3,7 +3,10 @@
 @section('js')
     <script>
         $(document).ready(function(){
-            $("#dataTable").DataTable();
+            $("#tableRevisi").DataTable();
+            $("#tableGu").DataTable();
+            $("#tableLs").DataTable();
+            $("#tablePengajuan").DataTable();
         });
     </script>
 @stop
@@ -21,33 +24,14 @@
                         @endif
 
                         @if(Auth::user()->level == 1) 
-                            <table class="table">
-                                <tr>
-                                    <th>No</th>
-                                    <th>Nama</th>
-                                    <th>Username</th>
-                                    <th>Email</th>
-                                    <th>Detail</th>
-                                </tr>
-                                @if(count($users))
-                                <?php $no = 1; ?>
-                                    @foreach($users as $item)
-                                        <tr>
-                                            <td>{{$no}}</td>
-                                            <td>{{$item->name}}</td>
-                                            <td>{{$item->username}}</td>
-                                            <td>{{$item->email}}</td>
-                                            <td><a href="#" class="btn btn-primary"><i class="fa fa-fw fa-eye"></i></a></td>
-                                        </tr>
-                                    <?php $no++; ?>
-                                    @endforeach
-                                @else
-                                    <tr>
-                                        <td colspan="5">Nothing Found</td>
-                                    </tr>
-                                @endif
-                            </table> 
-                            {{$users->render()}}
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <!-- Tabs and Pills Content -->
+                                    <ul class="nav nav-tabs" role="tablist">
+                                        <li role="presentation" class="active"></li>
+                                    </ul>
+                                </div>
+                            </div>
                         @endif 
                         @if(Auth::user()->level == 2) 
                             <div class="panel-heading">
@@ -117,30 +101,15 @@
                                 <!-- Tabs and Pills Content -->
                                 <div class="tab-content">
                                     <div role="tabpanel" class="tab-pane active" id="dashboard">
-                                        Ini DashBoard Buat BPP :
-                                        <br>
-                                        <ol>
-                                            <li>Table Pengajuan yang dia sendiri</li>
-                                            <li>Table hasil Revisi</li>
-                                        </ol>
-                                        <br><br>
-                                        <i>Kekurangan :</i>
-                                        <br>
-                                        <ol>
-                                            <li>Buat User belum ada fitur edit akun sendiri</li>
-                                            <li>Fitur Registernya masih ada di home<br>*Tapi langsung terdaftar sebagai BPP</li>
-                                        </ol>
+                                        @include('resource.bpp.table-pengajuan')
+                                        <hr>
+                                        @include('resource.bpp.table-revisi')
                                     </div>
                                     <div role="tabpanel" class="tab-pane" id="gu">
                                         @include('resource.bpp.table-gu')
                                     </div>
                                     <div role="tabpanel" class="tab-pane" id="ls">
-                                        Ini Langsung BPP :
-                                        <br>
-                                        <ol>
-                                            <li>Disini Ada Table LS punya si user BPP itu sendiri</li>
-                                            <li>Ada fitur tambah LS juga.. Nanti ngelink ke formnya</li>
-                                        </ol>
+                                        @include('resource.bpp.table-ls')
                                     </div>
                                 </div>
                             </div>  

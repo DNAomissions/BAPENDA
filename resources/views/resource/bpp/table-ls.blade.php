@@ -1,6 +1,6 @@
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h3 class="text-left"><i class="fa fa-fw fa-table"></i>&nbsp;Table Pengajuan Ganti Uang</h3>
+        <h3 class="text-left"><i class="fa fa-fw fa-table"></i>&nbsp;Table Pengajuan Langsung</h3>
     </div>
     <div class="panel-body">
         <div class="container-fluid">
@@ -9,7 +9,7 @@
             </div>
             <hr>
             <div class="table-responsive">
-                <table class="table table-bordered" id="tableGu">
+                <table class="table table-bordered" id="tableLs">
                     <thead>
                         <tr>
                             <th>No</th>
