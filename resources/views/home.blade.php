@@ -3,10 +3,9 @@
 @section('js')
     <script>
         $(document).ready(function(){
-            $("#tableRevisi").DataTable();
+            $("#tableDashboard").DataTable();
             $("#tableGu").DataTable();
             $("#tableLs").DataTable();
-            $("#tablePengajuan").DataTable();
         });
     </script>
 @stop
@@ -101,9 +100,7 @@
                                 <!-- Tabs and Pills Content -->
                                 <div class="tab-content">
                                     <div role="tabpanel" class="tab-pane active" id="dashboard">
-                                        @include('resource.bpp.table-pengajuan')
-                                        <hr>
-                                        @include('resource.bpp.table-revisi')
+                                        @include('resource.bpp.table-dashboard')
                                     </div>
                                     <div role="tabpanel" class="tab-pane" id="gu">
                                         @include('resource.bpp.table-gu')

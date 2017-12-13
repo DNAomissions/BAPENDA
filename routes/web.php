@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,13 +11,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    if(Auth::guard()){
+        return redirect()->to('/home');
+    }else{
+        return view('welcome');
+    }
 });
 
 Auth::routes();
-
-Route::get('/register', function() {
-    
-});
 
 Route::get('/home', 'HomeController@index')->name('home');
