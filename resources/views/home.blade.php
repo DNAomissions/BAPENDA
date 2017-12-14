@@ -21,14 +21,7 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                        {{
-                            $sad= GU::all();
 
-                            return view('asd',compact('sad'));
-                            
-                            }}
-                        
-                        {{$sad->}}
                         @if(Auth::user()->level->level == 'admin') 
                             <div class="panel">
                                 <div class="panel-heading">
