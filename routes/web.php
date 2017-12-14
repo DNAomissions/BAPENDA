@@ -25,3 +25,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/printer/view', 'HomeController@showPrinter');
 Route::get('/printer/print', 'HomeController@showPrintPreview');
+
+Route::get('/inputgu', function() {
+    return view('input_gu');
+});

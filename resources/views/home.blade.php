@@ -7,6 +7,12 @@
             $("#tableGu").DataTable();
             $("#tableLs").DataTable();
         });
+
+        // Untuk Table Verifikator
+            $("#tableRevisi-v").DataTable();
+            $("#tableGu-v").DataTable();
+            $("#tableLs-v").DataTable();
+            $("#tablePengajuan-v").DataTable();
     </script>
 @stop
 
@@ -36,55 +42,26 @@
                             <div class="panel-heading">
                                 <!-- Tabs and Pills Menu -->
                                 <ul class="nav nav-tabs" role="tablist">
-                                    <li role="presentation" class="active"><a href="#dashboard" aria-controls="dashboard" role="tab" data-toggle="tab">Dashboard</a></li>
-                                    <li role="presentation"><a href="#gu" aria-controls="gu" role="tab" data-toggle="tab">Ganti Uang (GU)</a></li>
-                                    <li role="presentation"><a href="#ls" aria-controls="ls" role="tab" data-toggle="tab">Langsung (LS)</a></li>
+                                    <li role="presentation" class="active"><a href="#dashboard-v" aria-controls="dashboard-v" role="tab" data-toggle="tab">Dashboard</a></li>
+                                    <li role="presentation"><a href="#gu-v" aria-controls="gu-v" role="tab" data-toggle="tab">Ganti Uang (GU)</a></li>
+                                    <li role="presentation"><a href="#ls-v" aria-controls="ls-v" role="tab" data-toggle="tab">Langsung (LS)</a></li>
                                 </ul> 
                             </div>
 
                             <div class="panel-body tabs-body-custom">
                                 <!-- Tabs and Pills Content -->
                                 <div class="tab-content">
-                                    <div role="tabpanel" class="tab-pane active" id="dashboard">
-                                        Ini DashBoard buat Verifikator :
-                                        <br>
-                                        <ol>
-                                            <li>Table Pengajuan GU & LS <br>*Tapi nanti ini mah di detailkan di tab GU & LS (Kayak ada Read More gitu)</li>
-                                            <li>Table Perevisian <br>*Sama kyk table pengajuan.. Tapi bisa langsung di revisi disini</li>
-                                        </ol>
-                                        <br><br>
-                                        <i>Keterangan :</i>
-                                        <br>
-                                        <ul>
-                                            <li>
-                                                Notifikasi buat Verifikator ada 2 jenis :
-                                                <ol>
-                                                    <li>Pengajuan (Pake font-awesome inbox => fa fa-fw fa-inbox)</li>
-                                                    <li>Perevisian (Pake font-awesome edit => fa fa-fw fa-edit)</li>
-                                                </ol>
-                                            </li>
-                                            <li>Notifikasi sama dashboard isinya mirip.. Cuman yang notifikasi mah Penjelas buat yang baru2 aja</li>
-                                        </ul>
-                                        <br><br>
-                                        <i>Kekurangan :</i>
-                                        <br>
-                                        <ol>
-                                            <li>Buat User belum ada fitur edit akun sendiri</li>
-                                            <li>Fitur Registernya masih ada di home<br>*Tapi langsung terdaftar sebagai BPP</li>
-                                        </ol>
+                                    <div role="tabpanel" class="tab-pane active" id="dashboard-v">
+                                        @include('resource.verifikator.table-pengajuan')
                                     </div>
-                                    <div role="tabpanel" class="tab-pane" id="gu">
-                                        Ini Ganti Uang buat Verifikator :
-                                        <br>
-                                        Belum Tau
+                                    <div role="tabpanel" class="tab-pane" id="gu-v">
+                                        @include('resource.verifikator.table-gu')
                                     </div>
-                                    <div role="tabpanel" class="tab-pane" id="ls">
-                                        Ini Langsung buat Verifikator :
-                                        <br>
-                                        Belum Tau juga
+                                    <div role="tabpanel" class="tab-pane" id="ls-v">
+                                        @include('resource.verifikator.table-ls')
                                     </div>
                                 </div>
-                            </div> 
+                            </div>  
                         @endif 
                         @if(Auth::user()->level->level == 'bpp')
                             <div class="panel-heading">
