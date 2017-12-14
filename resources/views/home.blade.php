@@ -21,8 +21,15 @@
                                 {{ session('status') }}
                             </div>
                         @endif
+                        {{
+                            $sad= GU::all();
 
-                        @if(Auth::user()->level == 1) 
+                            return view('asd',compact('sad'));
+                            
+                            }}
+                        
+                        {{$sad->}}
+                        @if(Auth::user()->level->level == 'admin') 
                             <div class="panel">
                                 <div class="panel-heading">
                                     <!-- Tabs and Pills Content -->
@@ -32,7 +39,7 @@
                                 </div>
                             </div>
                         @endif 
-                        @if(Auth::user()->level == 2) 
+                        @if(Auth::user()->level->level == 'verifikator') 
                             <div class="panel-heading">
                                 <!-- Tabs and Pills Menu -->
                                 <ul class="nav nav-tabs" role="tablist">
@@ -86,7 +93,7 @@
                                 </div>
                             </div> 
                         @endif 
-                        @if(Auth::user()->level == 3)
+                        @if(Auth::user()->level->level == 'bpp')
                             <div class="panel-heading">
                                 <!-- Tabs and Pills Menu -->
                                 <ul class="nav nav-tabs" role="tablist">
