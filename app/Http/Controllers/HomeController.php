@@ -27,4 +27,12 @@ class HomeController extends Controller
         $users = User::paginate(2);//Manggil semua dari table users
         return view('home',compact('users'));
     }
+
+    public function showPrinter() {
+        return view('file');
+    }
+
+    public function showPrintPreview() {
+        return view('print');
+    }
 }

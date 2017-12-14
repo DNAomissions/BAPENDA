@@ -21,3 +21,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/printer/view', 'HomeController@showPrinter');
+Route::get('/printer/print', 'HomeController@showPrintPreview');
