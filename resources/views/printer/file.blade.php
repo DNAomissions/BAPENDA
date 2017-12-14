@@ -1,4 +1,3 @@
-// Ini file/html/pdf yang akan diprint
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
 
 class HomeController extends Controller
 {
@@ -24,15 +23,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $users = User::paginate(2);//Manggil semua dari table users
-        return view('home',compact('users'));
+        return view('home');
     }
 
     public function showPrinter() {
-        return view('file');
+        return view('printer.print');
     }
 
     public function showPrintPreview() {
-        return view('print');
+        return view('printer.file');
     }
 }
