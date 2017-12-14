@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-use App\Bpp;
-use App\Kegiatan;
+use App\BPP;
+use App\kegiatan;
 
 class HomeController extends Controller
 {
@@ -27,7 +27,7 @@ class HomeController extends Controller
     public function index()
     {
         $users = User::all();//Manggil semua dari table users
-        $bpp = Bpp::all();//Manggil semua dari table bpp
+        $bpp = BPP::all();//Manggil semua dari table bpp
         $kegiatan = Kegiatan::all();//Manggil semua dari table kegiatan
         return view('home',compact('users','bpp','kegiatan'));
     }

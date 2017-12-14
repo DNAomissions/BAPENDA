@@ -15,6 +15,8 @@
                             <th>Level</th>
                             <th>Aksi</th>
                         </tr>
+                    </thead>
+                    <tbody>
                         <?php $no = 1; ?>
                         @foreach($users as $user)
                         <tr>
@@ -22,7 +24,7 @@
                             <td>{{$user->name}}</td>
                             <td>{{$user->username}}</td>
                             <td>{{$user->email}}</td>
-                            <td>{{$user->level}}</td>
+                            <td>{{$user->level->level}}</td>
                             <td>
                                 <button class="btn btn-success">UPDATE</button>
                                 <button class="btn btn-danger">DELETE</button>
@@ -30,9 +32,6 @@
                         </tr>
                         <?php $no++; ?>
                         @endforeach
-                    </thead>
-                    <tbody>
-                        
                     </tbody>
                 </table>
             </div>

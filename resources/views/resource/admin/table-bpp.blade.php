@@ -15,8 +15,10 @@
                             <th>No Telepon</th>
                             <th>Aksi</th>
                         </tr>
+                    </thead>
+                    <tbody>
                         <?php $no = 1; ?>
-                       @foreach($bpp as $bp)
+                        @foreach($bpp as $bp)
                         <tr>
                             <td>{{$no}}</td>
                             <td>{{$bp->nama_bpp}}</td>
@@ -29,10 +31,7 @@
                             </td>
                         </tr>
                         <?php $no++; ?>
-                        @endforeach
-                    </thead>
-                    <tbody>
-                        
+                        @endforeach    
                     </tbody>
                 </table>
             </div>

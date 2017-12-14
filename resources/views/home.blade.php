@@ -13,6 +13,12 @@
             $("#tableGu-v").DataTable();
             $("#tableLs-v").DataTable();
             $("#tablePengajuan-v").DataTable();
+
+        // Untuk Table Admin
+            $("#tableUser").DataTable();
+            $("#tableBPP").DataTable();
+            $("#tableKegiatan").DataTable();
+            
     </script>
 @stop
 
