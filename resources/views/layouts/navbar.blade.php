@@ -28,7 +28,7 @@
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links -->
-                @if(Auth::user()->level == 2)
+                @if(Auth::user()->level->level == 'verifikator')
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                             <i class="fa fa-fw fa-bell"></i><span class="badge badge-pill">3 New</span>
@@ -60,7 +60,7 @@
                         </div>
                     </li>
                 @endif
-                @if(Auth::user()->level == 3)
+                @if(Auth::user()->level->level == 'bpp')
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                             <i class="fa fa-fw fa-bell"></i><span class="badge badge-pill">3 New</span>

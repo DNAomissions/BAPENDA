@@ -1,8 +1,8 @@
 <ul class="nav nav-tabs" role="tablist">
-    <li role="presentarion" class="active"><a href="#table-ls" aria-controls="table-ls" role="tab" data-toggle="tab">Table</a></li>
+    <li role="presentarion" class="active"><a href="#table-ls" aria-controls="table-ls" role="tab" data-toggle="tab">Table Langsung</a></li>
     <li role="presentarion"><a href="#tambah-ls" aria-controls="table-ls" role="tab" data-toggle="tab">Tambah</a></li>
 </ul>
-<div class="tab-content">
+<div class="tab-content tab-padding">
     <div role="tabpanel" class="tab-pane active" id="table-ls">
         <div class="panel panel-default">
             <div class="panel-heading">
