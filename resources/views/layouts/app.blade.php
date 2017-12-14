@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Favicon -->
-        <link rel="shortcut icon" href="{{asset('images/logobapenda.png')}}" type="image/x-icon">
-        <link rel="icon" href="{{asset('images/logobapenda.png')}}" type="image/x-icon">
+        <link rel="shortcut icon" href="{{asset('images/b.png')}}" type="image/x-icon">
+        <link rel="icon" href="{{asset('images/b.png')}}" type="image/x-icon">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Bapenda') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
