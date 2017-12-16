@@ -1,28 +1,76 @@
 @extends('layouts.app')
+    
+@if(Auth::user()->level->level == 'bpp')
+    @section('js')
+        <script>
+            $(document).ready(function(){
+                $("#tableDashboard").DataTable();
+                $("#tableGu").DataTable();
+                $("#tableLs").DataTable();
+                // Isi form input
+                $('.unitKerja').val('{{Auth::user()->bpp->unit_kerja}}')
+                $('.namaBPP').val('{{Auth::user()->bpp->nama_bpp}}');
+                // Fitur semacam autocomplete
+                $('#programKegiatanGU')
+                    .editableSelect()
+                    .on('select.editable-select',function(e,sl){
+                            $('#kodeKegiatanGU').val(sl.data('cc'));
+                });
 
-@section('js')
-    <script>
-        $(document).ready(function(){
-            $("#tableDashboard").DataTable();
-            $("#tableGu").DataTable();
-            $("#tableLs").DataTable();
-        });
+                $('#programKegiatanLS')
+                    .editableSelect()
+                    .on('select.editable-select',function(e,sl){
+                            $('#kodeKegiatanLS').val(sl.data('cc'));
+                });
 
-        // Untuk Table Verifikator
-            $("#tableRevisi-v").DataTable();
-            $("#tableGu-v").DataTable();
-            $("#tableLs-v").DataTable();
-            $("#tablePengajuan-v").DataTable();
+                $('.resetButton').on('click', function(){
+                    var rbutton = $(this).attr('data-rbutton');
+                    $('#'+rbutton).wrap('<form>').closest('form').get(0).reset();
+                    $('#'+rbutton).unwrap();
+                });
+            });
+        </script>
+    @endsection
+@endif
 
-        // Untuk Table Admin
-            $("#tableUser").DataTable();
-            $("#tableBPP").DataTable();
-            $("#tableKegiatan").DataTable();
-            
-    </script>
-@stop
+@if(Auth::user()->level->level == 'admin')
+    @section('js')
+        <script>
+            $(document).ready(function(){
+
+                // Untuk Table Admin
+                    $("#tableUser").DataTable();
+                    $("#tableBPP").DataTable();
+                    $("#tableKegiatan").DataTable();
+
+                // AutoComplete
+                $('#namaBPP')
+                    .editableSelect()
+                    .on('select.editable-select',function(e,sl){
+                            $('#id_bpp').val(sl.data('id'));
+                });
+            });
+        </script>
+    @stop
+@endif
+
+@if(Auth::user()->level->level == 'admin')
+    @section('js')
+        <script>
+            $(document).ready(function(){
+
+                // Untuk Table Verifikator
+                $("#tableRevisi-v").DataTable();
+                $("#tableGu-v").DataTable();
+                $("#tableLs-v").DataTable();
+                $("#tablePengajuan-v").DataTable();
+            });
+        </script>
+    @stop
+@endif
 
 @section('content')
+@include('inc.messages')
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -165,16 +213,32 @@
                                 <!-- Tabs and Pills Content -->
                                 <div class="tab-content">
                                     <div role="tabpanel" class="tab-pane active" id="dashboard">
-                                        @include('resource.bpp.table-dashboard')
+                                        @include('resource.table.table-dashboard')
                                     </div>
                                     <div role="tabpanel" class="tab-pane" id="gu">
-                                        @include('resource.bpp.table-gu')
+                                        <div class="tab-content tab-padding">
+                                            <ul class="nav nav-tabs" role="tablist">
+                                                <li role="presentation" class="active"><a href="#table-gu" aria-controls="tabelLangsung" role="tab" data-toggle="tab">Tabel Langsung</a></li>
+                                                <li role="presentation"><a href="#tambah-gu" aria-controls="tambah" role="tab" data-toggle="tab">Tambah</a></li>
+                                            </ul>
+
+                                            @include('resource.table.table-gu')
+                                            @include('resource.form.create-gu')
+                                        </div>
                                     </div>
                                     <div role="tabpanel" class="tab-pane" id="ls">
-                                        @include('resource.bpp.table-ls')
+                                        <div class="tab-content tab-padding">
+                                            <ul class="nav nav-tabs" role="tablist">
+                                                <li role="presentation" class="active"><a href="#table-ls" aria-controls="tabelLangsung" role="tab" data-toggle="tab">Tabel Langsung</a></li>
+                                                <li role="presentation"><a href="#tambah-ls" aria-controls="tambah" role="tab" data-toggle="tab">Tambah</a></li>
+                                            </ul>
+
+                                            @include('resource.table.table-ls')
+                                            @include('resource.form.create-ls')
+                                        </div>
                                     </div>
                                 </div>
-                            </div>  
+                            </div>
                         @endif
                 </div>
             </div>

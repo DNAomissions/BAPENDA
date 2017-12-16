@@ -6,7 +6,10 @@ use Illuminate\Http\Request;
 
 use App\User;
 use App\BPP;
-use App\kegiatan;
+use App\GU;
+use App\Kegiatan;
+use App\LS;
+use DB;
 
 class HomeController extends Controller
 {
@@ -28,9 +31,16 @@ class HomeController extends Controller
     public function index()
     {
         $users = User::all();//Manggil semua dari table users
-        $bpp = BPP::all();//Manggil semua dari table bpp
+
+        $tabelGU = GU::all();
+        $tabelLS = LS::all();
         $kegiatan = Kegiatan::all();//Manggil semua dari table kegiatan
-        return view('home',compact('users','bpp','kegiatan'));
+        
+        $bpp = BPP::all();
+
+        $dashboardBPP = DB::select('SELECT "GU" as "Kategori", kegiatan.program_kegiatan, created_at, status FROM gu JOIN kegiatan USING(kode_kegiatan) UNION SELECT "LS" as "Kategori", kegiatan.program_kegiatan, created_at, status FROM ls JOIN kegiatan USING(kode_kegiatan) ORDER BY created_at DESC');
+
+        return view('home',compact('users', 'tabelGU', 'tabelLS', 'kegiatan', 'dashboardBPP', 'bpp'));
     }
 
     public function showPrinter() {
@@ -39,5 +49,22 @@ class HomeController extends Controller
 
     public function showPrintPreview() {
         return view('printer.file');
+    }
+
+    public function verifikasigu() {
+        return view('verifikasi.verifikasigu');
+    }
+
+    public function verifikasilu() {
+        return view('verifikasi.verifikasils');
+    }
+
+    public function autocomplete(Request $request){
+        $term = $request->term;
+        $data = DB::table("kegiatan")->where('program_kegiatan', 'LIKE', '%'.$term.'%')->get();
+        foreach ($data as $v) {
+            $array[] = $v->program_kegiatan;
+        }
+        return json_encode($array);
     }
 }

@@ -84,8 +84,8 @@
                            </div>
                     </td>
                     <td align="center">
-                      <label class="radio-inline"><input type="radio" value="ada" name="keterangan">Ada</label>
-                      <label class="radio-inline"><input type="radio" value="tidak" name="keterangan">Tidak Ada</label>
+                      <label class="radio-inline"><input type="radio" value="ada" name="keterangan1">Ada</label>
+                      <label class="radio-inline"><input type="radio" value="tidak" name="keterangan1">Tidak Ada</label>
                     </td>
                   </tr>
                   <tr>
@@ -118,8 +118,8 @@
                       </div>
                     </td>
                     <td align="center">
-                      <label class="radio-inline"><input type="radio" value="ada" name="keterangan">Ada</label>
-                      <label class="radio-inline"><input type="radio" value="tidak" name="keterangan">Tidak Ada</label>
+                      <label class="radio-inline"><input type="radio" value="ada" name="keterangan2">Ada</label>
+                      <label class="radio-inline"><input type="radio" value="tidak" name="keterangan2">Tidak Ada</label>
                     </td>
                   </tr>
                   <tr>
@@ -152,8 +152,8 @@
                       </div>
                     </td>
                     <td align="center">
-                      <label class="radio-inline"><input type="radio" value="ada" name="keterangan">Ada</label>
-                      <label class="radio-inline"><input type="radio" value="tidak" name="keterangan">Tidak Ada</label>
+                      <label class="radio-inline"><input type="radio" value="ada" name="keterangan3">Ada</label>
+                      <label class="radio-inline"><input type="radio" value="tidak" name="keterangan3">Tidak Ada</label>
                     </td>
                   </tr>
                   <tr>
@@ -186,8 +186,8 @@
                       </div>
                     </td>
                     <td align="center">
-                      <label class="radio-inline"><input type="radio" value="ada" name="keterangan">Ada</label>
-                      <label class="radio-inline"><input type="radio" value="tidak" name="keterangan">Tidak Ada</label>
+                      <label class="radio-inline"><input type="radio" value="ada" name="keterangan4">Ada</label>
+                      <label class="radio-inline"><input type="radio" value="tidak" name="keterangan4">Tidak Ada</label>
                     </td>
                   </tr>
                   <tr>
@@ -220,8 +220,8 @@
                       </div>
                     </td>
                     <td align="center">
-                      <label class="radio-inline"><input type="radio" value="ada" name="keterangan">Ada</label>
-                      <label class="radio-inline"><input type="radio" value="tidak" name="keterangan">Tidak Ada</label>
+                      <label class="radio-inline"><input type="radio" value="ada" name="keterangan5">Ada</label>
+                      <label class="radio-inline"><input type="radio" value="tidak" name="keterangan5">Tidak Ada</label>
                     </td>
                   </tr>
                 </thread>

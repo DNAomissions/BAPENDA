@@ -42,7 +42,7 @@ class AdminController extends Controller
         $this->validate($request, [
             'id' => 'required',
             'username' => 'required',
-            'alamat' => 'required',
+            'email' => 'required',
             'password' => 'required',
             'level' => 'required'
       ]);
@@ -56,7 +56,7 @@ class AdminController extends Controller
 
            $tambah->name = $nama->nama_bpp;
            $tambah->username = $request['username'];
-           $tambah->email = $request['alamat'];
+           $tambah->email = $request['email'];
            $tambah->password = bcrypt($request['password']);
            $tambah->id_level = $request['level'];
            $tambah->save();

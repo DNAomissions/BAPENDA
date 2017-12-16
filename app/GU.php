@@ -24,11 +24,11 @@ class GU extends Model
     ];
 
     public function bpp(){
-        return $this->belongsTo('App/BPP','id_bpp');
+        return $this->belongsTo('App\BPP','id_bpp');
     }
 
     public function kegiatan(){
-        return $this->belongsTo('App/Kegiatan','kode_kegiatan');
+        return $this->belongsTo('App\Kegiatan','kode_kegiatan');
     }
 
 }
