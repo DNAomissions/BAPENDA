@@ -30,5 +30,15 @@ Route::get('/inputgu', function() {
     return view('input_gu');
 });
 
+<<<<<<< HEAD
 Route::get('/verifikasigu', 'HomeController@verifikasigu');
 Route::get('/verifikasils', 'HomeController@verifikasils');
+=======
+// Route untuk Fitur Admin
+Route::post('/store/bpp', 'AdminController@storeBPP');
+Route::post('/store/kegiatan', 'AdminController@storeKegiatan');
+Route::post('/store/user', 'AdminController@storeUser');
+
+Route::get('/edit/bpp/{id}', 'AdminController@editBPP');
+Route::post('/update/bpp/{id}', 'AdminController@updateBPP');
+>>>>>>> 1df99af901c534344edd3bf1b94db31b4f858a94

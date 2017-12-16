@@ -13,9 +13,10 @@
                             <th>Program Kegiatan</th>
                             <th>Aksi</th>
                         </tr>
-                       @foreach($kegiatan as $keg)
+                    </thead>
+                        @foreach($kegiatan as $keg)
                         <tr>
-                            <td>1</td>
+                            <td>{{$keg->id}}</td>
                             <td>{{$keg->kode_kegiatan}}</td>
                             <td>{{$keg->program_kegiatan}}</td>
                             <td>
@@ -24,7 +25,6 @@
                             </td>
                         </tr>
                         @endforeach
-                    </thead>
                     <tbody>
                         
                     </tbody>
