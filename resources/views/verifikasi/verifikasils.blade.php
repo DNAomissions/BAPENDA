@@ -111,7 +111,7 @@
                     <span class="glyphicon glyphicon-list-alt"></span> Detail
                    </button>
                      <!-- Modal -->
-                       <div class="modal fade" id="myModal" role="dialog">
+                       <div class="modal fade" id="myModal1" role="dialog">
                          <div class="modal-dialog">
                          
                            <!-- Modal content-->
@@ -145,7 +145,7 @@
                     <span class="glyphicon glyphicon-list-alt"></span> Detail
                    </button>
                      <!-- Modal -->
-                       <div class="modal fade" id="myModal" role="dialog">
+                       <div class="modal fade" id="myModal2" role="dialog">
                          <div class="modal-dialog">
                          
                            <!-- Modal content-->
@@ -179,7 +179,7 @@
                     <span class="glyphicon glyphicon-list-alt"></span> Detail
                    </button>
                      <!-- Modal -->
-                       <div class="modal fade" id="myModal" role="dialog">
+                       <div class="modal fade" id="myModal3" role="dialog">
                          <div class="modal-dialog">
                          
                            <!-- Modal content-->
@@ -213,7 +213,7 @@
                     <span class="glyphicon glyphicon-list-alt"></span> Detail
                    </button>
                      <!-- Modal -->
-                       <div class="modal fade" id="myModal" role="dialog">
+                       <div class="modal fade" id="myModal4" role="dialog">
                          <div class="modal-dialog">
                          
                            <!-- Modal content-->
@@ -247,7 +247,7 @@
                     <span class="glyphicon glyphicon-list-alt"></span> Detail
                    </button>
                      <!-- Modal -->
-                       <div class="modal fade" id="myModal" role="dialog">
+                       <div class="modal fade" id="myModal5" role="dialog">
                          <div class="modal-dialog">
                          
                            <!-- Modal content-->
@@ -281,7 +281,7 @@
                     <span class="glyphicon glyphicon-list-alt"></span> Detail
                    </button>
                      <!-- Modal -->
-                       <div class="modal fade" id="myModal" role="dialog">
+                       <div class="modal fade" id="myModal6" role="dialog">
                          <div class="modal-dialog">
                          
                            <!-- Modal content-->
@@ -315,7 +315,7 @@
                     <span class="glyphicon glyphicon-list-alt"></span> Detail
                    </button>
                      <!-- Modal -->
-                       <div class="modal fade" id="myModal" role="dialog">
+                       <div class="modal fade" id="myModal7" role="dialog">
                          <div class="modal-dialog">
                          
                            <!-- Modal content-->
@@ -349,7 +349,7 @@
                     <span class="glyphicon glyphicon-list-alt"></span> Detail
                    </button>
                      <!-- Modal -->
-                       <div class="modal fade" id="myModal" role="dialog">
+                       <div class="modal fade" id="myModal8" role="dialog">
                          <div class="modal-dialog">
                          
                            <!-- Modal content-->
@@ -383,7 +383,7 @@
                     <span class="glyphicon glyphicon-list-alt"></span> Detail
                    </button>
                      <!-- Modal -->
-                       <div class="modal fade" id="myModal" role="dialog">
+                       <div class="modal fade" id="myModal9" role="dialog">
                          <div class="modal-dialog">
                          
                            <!-- Modal content-->
@@ -417,7 +417,7 @@
                     <span class="glyphicon glyphicon-list-alt"></span> Detail
                    </button>
                      <!-- Modal -->
-                       <div class="modal fade" id="myModal" role="dialog">
+                       <div class="modal fade" id="myModal10" role="dialog">
                          <div class="modal-dialog">
                          
                            <!-- Modal content-->
@@ -451,7 +451,7 @@
                     <span class="glyphicon glyphicon-list-alt"></span> Detail
                    </button>
                      <!-- Modal -->
-                       <div class="modal fade" id="myModal" role="dialog">
+                       <div class="modal fade" id="myModal11" role="dialog">
                          <div class="modal-dialog">
                          
                            <!-- Modal content-->
@@ -485,7 +485,7 @@
                     <span class="glyphicon glyphicon-list-alt"></span> Detail
                    </button>
                      <!-- Modal -->
-                       <div class="modal fade" id="myModal" role="dialog">
+                       <div class="modal fade" id="myModal12" role="dialog">
                          <div class="modal-dialog">
                          
                            <!-- Modal content-->
@@ -519,7 +519,7 @@
                     <span class="glyphicon glyphicon-list-alt"></span> Detail
                    </button>
                      <!-- Modal -->
-                       <div class="modal fade" id="myModal" role="dialog">
+                       <div class="modal fade" id="myModal13" role="dialog">
                          <div class="modal-dialog">
                          
                            <!-- Modal content-->
@@ -553,7 +553,7 @@
                     <span class="glyphicon glyphicon-list-alt"></span> Detail
                    </button>
                      <!-- Modal -->
-                       <div class="modal fade" id="myModal" role="dialog">
+                       <div class="modal fade" id="myModal14" role="dialog">
                          <div class="modal-dialog">
                          
                            <!-- Modal content-->
@@ -587,7 +587,7 @@
                     <span class="glyphicon glyphicon-list-alt"></span> Detail
                    </button>
                      <!-- Modal -->
-                       <div class="modal fade" id="myModal" role="dialog">
+                       <div class="modal fade" id="myModal15" role="dialog">
                          <div class="modal-dialog">
                          
                            <!-- Modal content-->
@@ -621,7 +621,7 @@
                     <span class="glyphicon glyphicon-list-alt"></span> Detail
                    </button>
                      <!-- Modal -->
-                       <div class="modal fade" id="myModal" role="dialog">
+                       <div class="modal fade" id="myModal16" role="dialog">
                          <div class="modal-dialog">
                          
                            <!-- Modal content-->
@@ -655,7 +655,7 @@
                     <span class="glyphicon glyphicon-list-alt"></span> Detail
                    </button>
                      <!-- Modal -->
-                       <div class="modal fade" id="myModal" role="dialog">
+                       <div class="modal fade" id="myModal17" role="dialog">
                          <div class="modal-dialog">
                          
                            <!-- Modal content-->
@@ -689,7 +689,7 @@
                     <span class="glyphicon glyphicon-list-alt"></span> Detail
                    </button>
                      <!-- Modal -->
-                       <div class="modal fade" id="myModal" role="dialog">
+                       <div class="modal fade" id="myModal18" role="dialog">
                          <div class="modal-dialog">
                          
                            <!-- Modal content-->
@@ -723,7 +723,7 @@
                     <span class="glyphicon glyphicon-list-alt"></span> Detail
                    </button>
                      <!-- Modal -->
-                       <div class="modal fade" id="myModal" role="dialog">
+                       <div class="modal fade" id="myModal19" role="dialog">
                          <div class="modal-dialog">
                          
                            <!-- Modal content-->
@@ -757,7 +757,7 @@
                     <span class="glyphicon glyphicon-list-alt"></span> Detail
                    </button>
                      <!-- Modal -->
-                       <div class="modal fade" id="myModal" role="dialog">
+                       <div class="modal fade" id="myModal20" role="dialog">
                          <div class="modal-dialog">
                          
                            <!-- Modal content-->
@@ -791,7 +791,7 @@
                     <span class="glyphicon glyphicon-list-alt"></span> Detail
                    </button>
                      <!-- Modal -->
-                       <div class="modal fade" id="myModal" role="dialog">
+                       <div class="modal fade" id="myModal21" role="dialog">
                          <div class="modal-dialog">
                          
                            <!-- Modal content-->
@@ -825,7 +825,7 @@
                     <span class="glyphicon glyphicon-list-alt"></span> Detail
                    </button>
                      <!-- Modal -->
-                       <div class="modal fade" id="myModal" role="dialog">
+                       <div class="modal fade" id="myModal22" role="dialog">
                          <div class="modal-dialog">
                          
                            <!-- Modal content-->
@@ -859,7 +859,7 @@
                     <span class="glyphicon glyphicon-list-alt"></span> Detail
                    </button>
                      <!-- Modal -->
-                       <div class="modal fade" id="myModal" role="dialog">
+                       <div class="modal fade" id="myModal23" role="dialog">
                          <div class="modal-dialog">
                          
                            <!-- Modal content-->
@@ -893,7 +893,7 @@
                     <span class="glyphicon glyphicon-list-alt"></span> Detail
                    </button>
                      <!-- Modal -->
-                       <div class="modal fade" id="myModal" role="dialog">
+                       <div class="modal fade" id="myModal24" role="dialog">
                          <div class="modal-dialog">
                          
                            <!-- Modal content-->
@@ -927,7 +927,7 @@
                     <span class="glyphicon glyphicon-list-alt"></span> Detail
                    </button>
                      <!-- Modal -->
-                       <div class="modal fade" id="myModal" role="dialog">
+                       <div class="modal fade" id="myModal25" role="dialog">
                          <div class="modal-dialog">
                          
                            <!-- Modal content-->
@@ -961,7 +961,7 @@
                     <span class="glyphicon glyphicon-list-alt"></span> Detail
                    </button>
                      <!-- Modal -->
-                       <div class="modal fade" id="myModal" role="dialog">
+                       <div class="modal fade" id="myModal26" role="dialog">
                          <div class="modal-dialog">
                          
                            <!-- Modal content-->
@@ -995,7 +995,7 @@
                     <span class="glyphicon glyphicon-list-alt"></span> Detail
                    </button>
                      <!-- Modal -->
-                       <div class="modal fade" id="myModal" role="dialog">
+                       <div class="modal fade" id="myModal27" role="dialog">
                          <div class="modal-dialog">
                          
                            <!-- Modal content-->

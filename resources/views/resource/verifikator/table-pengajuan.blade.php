@@ -25,7 +25,7 @@
                             <td>macul</td>
                             <td>12 Desember 2017</td>
                             <td>Sedang diproses/Pengajuan Ulang</td>
-                            <td><a href="/show/{{1}}">Verifikasi</a></td>
+                            <td><a href="{{url('/verifikator/show',1)}}">Verifikasi</a></td>
                         </tr>
                         <tr>
                             <td>2</td>

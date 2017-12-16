@@ -26,7 +26,7 @@
               <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-2"><label for="unitkerja">Unit Kerja</label></div>
-                <div class="col-md-8"><input type="text" class="form-control" id="unitkerja"></div>
+                <div class="col-md-8"><input type="text" class="form-control" id="unitkerja" value="{{ $gu->bpp->unit_kerja }}"></div>
               </div>
             </div>
             <div class="form-group">
@@ -34,7 +34,7 @@
                 <div class="row">
                   <div class="col-md-1"></div>
                   <div class="col-md-2"><label for="namakegiatan">Nama Kegiatan</label></div>
-                  <div class="col-md-8"><input type="text" class="form-control" id="namakegiatan"></div>
+                  <div class="col-md-8"><input type="text" class="form-control" id="namakegiatan" value="{{$gu->kegiatan->program_kegiatan}}"></div>
                 </div>
               </div>
             </div>
@@ -42,7 +42,7 @@
               <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-2"><label for="namabpp">Nama BPP</label></div>
-                <div class="col-md-8"><input type="text" class="form-control" id="namabpp"></div>
+                <div class="col-md-8"><input type="text" class="form-control" id="namabpp" value="{{$gu->bpp->nama_bpp}}"></div>
               </div>
             </div>
             <div class="container">

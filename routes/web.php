@@ -34,6 +34,7 @@ Route::get('/inputgu', function() {
 // Verifikasi
 Route::get('/verifikasigu', 'HomeController@verifikasigu');
 Route::get('/verifikasils', 'HomeController@verifikasils');
+Route::get('/verifikator/show/{id}', 'VerifikatorController@show');
 
 // Route untuk Fitur Admin
 Route::post('/store/bpp', 'AdminController@storeBPP');
