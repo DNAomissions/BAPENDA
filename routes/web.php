@@ -47,3 +47,6 @@ Route::post('/update/bpp/{id}', 'AdminController@updateBPP');
 Route::get('/autocomplete', 'HomeController@autocomplete');
 Route::post('/gu/insert', 'guController@store');
 Route::post('/ls/insert', 'lsController@store');
+
+//BPP
+Route::get('/user/edit/bpp/{id}','UserController@show');

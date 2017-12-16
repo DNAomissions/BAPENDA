@@ -55,9 +55,7 @@ class lsController extends Controller
                  $names[] = $nameFinal;
              }
 
-             foreach($names as $n){
-                 $nameToStore = $nameToStore.''.$n.", ";
-             }
+             $nameToStore = implode(',', $names);
          }
          return $nameToStore;
      }
