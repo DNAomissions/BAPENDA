@@ -29,3 +29,11 @@ Route::get('/printer/print', 'HomeController@showPrintPreview');
 Route::get('/inputgu', function() {
     return view('input_gu');
 });
+
+// Route untuk Fitur Admin
+Route::post('/store/bpp', 'AdminController@storeBPP');
+Route::post('/store/kegiatan', 'AdminController@storeKegiatan');
+Route::post('/store/user', 'AdminController@storeUser');
+
+Route::get('/edit/bpp/{id}', 'AdminController@editBPP');
+Route::post('/update/bpp/{id}', 'AdminController@updateBPP');

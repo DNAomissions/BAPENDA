@@ -56,7 +56,7 @@
                                             <div class="panel-heading">
                                             <!-- Tabs and Pills Content -->
                                                 <ul class="nav nav-tabs" role="tablist">
-                                                    <li role="presentation" class="active"><a href="#tabelbpp" aria-controls="utama" role="tab" data-toggle="tab">Tabel BPP</a></li>
+                                                    <li role="presentation" class="active"><a href="#tabelbpp" aria-controls="tabelbpp" role="tab" data-toggle="tab">Tabel BPP</a></li>
                                                     <li role="presentation"><a href="#tambahbpp" aria-controls="tambahbpp" role="tab" data-toggle="tab">Tambah BPP</a></li>
                                                 </ul>
                                             </div>

@@ -26,8 +26,8 @@
                             <td>{{$bp->alamat}}</td>
                             <td>{{$bp->no_telepon}}</td>
                             <td>
-                                <button class="btn btn-success">UPDATE</button>
-                                <button class="btn btn-danger">DELETE</button>
+                                <a href="/edit/bpp/{{base64_encode($bp->id_bpp)}}" class="btn btn-success">UPDATE</a>
+                                <a href="/delete/bpp/{{base64_encode($bp->id_bpp)}}" class="btn btn-danger">DELETE</a>
                             </td>
                         </tr>
                         <?php $no++; ?>
