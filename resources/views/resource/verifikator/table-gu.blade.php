@@ -4,10 +4,6 @@
     </div>
     <div class="panel-body">
         <div class="container-fluid">
-            <div class="text-left">
-                <a href="#" class="btn btn-primary"><i class="fa fa-fw fa-plus"></i></a>
-            </div>
-            <hr>
             <div class="table-responsive">
                 <table class="table table-bordered" id="tableGu-v">
                     <thead>

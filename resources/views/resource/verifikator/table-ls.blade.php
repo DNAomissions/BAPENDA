@@ -5,7 +5,6 @@
     <div class="panel-body">
         <div class="container-fluid">
             <div class="text-left">
-                <a href="#" class="btn btn-primary"><i class="fa fa-fw fa-plus"></i></a>
             </div>
             <hr>
             <div class="table-responsive">
@@ -27,7 +26,7 @@
                             <td>Jajang</td>
                             <td>11 Desember 2017</td>
                             <td>Sedang diproses/Pengajuan Ulang</td>
-                            <td><a href="/show/{{2}}">Verifikasi</a></td>
+                            <td><a href="/show/{{2}}" class="btn btn-primary">Verifikasi</a></td>
                         </tr>
                     </tbody>
                 </table>

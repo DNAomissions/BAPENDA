@@ -1,4 +1,4 @@
-<div class="container">		
+<div class="container">
 
 	<form action="{{url('/store/bpp')}}" method="POST">
 	 	<input type="hidden" name="_token" value="{{ csrf_token() }}">
