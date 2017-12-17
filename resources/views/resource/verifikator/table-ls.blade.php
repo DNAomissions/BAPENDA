@@ -20,14 +20,17 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>2</td>
-                            <td>makan bersama</td>
-                            <td>Jajang</td>
-                            <td>11 Desember 2017</td>
-                            <td>Sedang diproses/Pengajuan Ulang</td>
-                            <td><a href="/show/{{2}}" class="btn btn-primary">Verifikasi</a></td>
-                        </tr>
+                        <?php $no=1; ?>
+                        @foreach($tabelLS as $ls)
+                            <tr>
+                                <td><?php echo $no;$no++; ?></td>
+                                <td>{{$ls->kegiatan->program_kegiatan}}</td>
+                                <td>{{$ls->bpp['nama_bpp']}}</td>
+                                <td>{{$ls->created_at}}</td>
+                                <td>{{$ls->status}}</td>
+                                <td><a href="{{url('/verifikator/show_ls', base64_encode($ls->id_ls))}}">Verifikasi</a></td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

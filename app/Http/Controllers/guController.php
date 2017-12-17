@@ -12,6 +12,12 @@ class guController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
 
@@ -91,7 +97,7 @@ class guController extends Controller
 
         $gu->kode_kegiatan = $request->input('kodeKegiatan');
         $gu->id_bpp = $request->input('idBPP');
-
+        $gu->id_verif = $request->input('idBPP');
         $gu->surat_permohonan = $nameSPToStore;
         $gu->buku_kas_umum = $nameBKUToStore;
         $gu->laporan_pertanggungjawaban = $nameLPToStore;

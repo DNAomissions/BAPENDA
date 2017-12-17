@@ -65,7 +65,7 @@
                                                     {{Form::label('namaKegiatan', 'Nama Kegiatan : ', ['class' => 'control-label col-md-4'])}}
                                                     <div class="col-md-8">
                                                         {{-- {{Form::text('namaKegiatan', '', ['class' => 'form-control', 'placeholder' => 'Nama Kegiatan', 'required', 'id' => 'programKegiatan', 'onchange' => 'ambilKode(this.value)',])}} --}}
-                                                        <select id="programKegiatanLS" name="programKegiatan" class="form-control programKegiatan" style="height:37px" required>
+                                                        <select id="programKegiatanLS" name="programKegiatan" class="form-control programKegiatanLS" style="height:37px" required>
                                                             <option value="" selected disabled></option>
                                                             @foreach($kegiatan as $kg)
                                                                 <option  data-cc="{{$kg->kode_kegiatan}}">{{$kg->program_kegiatan}}</option>
@@ -104,7 +104,7 @@
                                                     <div class="col-md-8">
                                                         <div class="input-group">
                                                             <span class="input-group-addon" style="width:auto">Rp.</span>
-                                                            {{Form::text('hps','', ['class' => 'form-control', 'placeholder' => 'HPS', 'required', 'name' => 'hps'])}}
+                                                            {{Form::text('hps','', ['class' => 'form-control', 'placeholder' => 'HPS tidak boleh lebih besar dari DPA', 'required', 'name' => 'hps'])}}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -116,7 +116,7 @@
                                                     <div class="col-md-8">
                                                         <div class="input-group">
                                                             <span class="input-group-addon" style="width:auto">Rp.</span>
-                                                            {{Form::text('penawaran','', ['class' => 'form-control', 'placeholder' => 'Penawaran', 'required', 'name' => 'penawaran'])}}
+                                                            {{Form::text('penawaran','', ['class' => 'form-control', 'placeholder' => 'Penawaran tidak boleh lebih besar dari HPS', 'required', 'name' => 'penawaran'])}}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -128,7 +128,7 @@
                                                     <div class="col-md-8">
                                                         <div class="input-group">
                                                             <span class="input-group-addon" style="width:auto">Rp.</span>
-                                                            {{Form::text('spk','', ['class' => 'form-control', 'placeholder' => 'SPK', 'required', 'name' => 'spk'])}}
+                                                            {{Form::text('spk','', ['class' => 'form-control', 'placeholder' => 'SPK tidak boleh lebih besar dari Penawaran', 'required', 'name' => 'spk'])}}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -136,9 +136,9 @@
 
                                             <div class="form-group">
                                                 <div class="row">
-                                                    {{Form::label('mp', 'Mata Pekerjaan : ', ['class' => 'control-label col-md-4'])}}
+                                                    {{Form::label('mp', 'Masa Pekerjaan : ', ['class' => 'control-label col-md-4'])}}
                                                     <div class="col-md-8">
-                                                        {{Form::text('mp', '', ['class' => 'form-control', 'placeholder' => 'Mata Pekerjaan', 'required', 'name' => 'mp'])}}
+                                                        {{Form::text('mp', '', ['class' => 'form-control', 'placeholder' => 'Masa Pekerjaan', 'required', 'name' => 'mp'])}}
                                                     </div>
                                                 </div>
                                             </div>

@@ -4,7 +4,7 @@
 	 	<input type="hidden" name="_token" value="{{ csrf_token() }}">
 		<div class="form-group">
 			<label for="nama">Nama : </label>
-			<input type="text" class="form-control" id="nama_bpp" name="name" required>
+			<input type="text" class="form-control" id="nama_bpp" name="nama_bpp" required>
 		</div>
 		<div class="form-group">
 			<label for="alamat">Unit Kerja : </label>

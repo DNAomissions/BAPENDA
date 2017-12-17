@@ -12,6 +12,12 @@ class lsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         //
@@ -135,6 +141,7 @@ class lsController extends Controller
         $ls = new LS;
 
         $ls->id_bpp = $request->input('idBPP');
+        $ls->id_verif = $request->input('idBPP');
         $ls->no_spp = $request->input('noSPP');
         $ls->pekerjaan = $request->input('pekerjaan');
         $ls->perusahaan = $request->input('perusahaan');
@@ -144,6 +151,19 @@ class lsController extends Controller
         $ls->penawaran = $request->input('penawaran');
         $ls->spk = $request->input('spk');
         $ls->mp = $request->input('mp');
+
+
+        if($ls->spk > $ls->penawaran) {
+            return redirect('/home')->with('error', 'SPK tidak boleh lebih besar dari Penawaran');
+        }
+
+        if($ls->penawaran > $ls->hps) {
+            return redirect('/home')->with('error', 'Penawaran tidak boleh lebih besar dari HPS');
+        }
+
+        if($ls->hps >= $ls->dpa) {
+            return redirect('/home')->with('error', 'HPS tidak boleh lebih besar dari DPA');
+        }
 
         $ls->kak = $nameKAK;
         $ls->rab = $nameRAB;

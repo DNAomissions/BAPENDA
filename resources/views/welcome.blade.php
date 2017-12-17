@@ -39,22 +39,24 @@
                             @endif
                         </div>
 
-                        <div class="form-group">
+                        <!-- Remember Me & Forget Password -->
+
+                        <!-- <div class="form-group">
                             <div class="checkbox">
                                 <label>
                                     <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
                                 </label>
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="form-group">
+                        <div class="form-group pull-right">
                             <button type="submit" class="btn btn-primary">
                                 Login
                             </button>
 
-                            <a class="btn btn-link" href="{{ route('password.request') }}">
+                            <!-- <a class="btn btn-link" href="{{ route('password.request') }}">
                                 Forgot Your Password?
-                            </a>
+                            </a> -->
                         </div>
                     </form>
                 </div>

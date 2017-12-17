@@ -10,6 +10,7 @@ use App\GU;
 use App\Kegiatan;
 use App\LS;
 use DB;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -35,12 +36,25 @@ class HomeController extends Controller
         $tabelGU = GU::all();
         $tabelLS = LS::all();
         $kegiatan = Kegiatan::all();//Manggil semua dari table kegiatan
-        
+
         $bpp = BPP::all();
 
-        $dashboardBPP = DB::select('SELECT "GU" as "Kategori", kegiatan.program_kegiatan, created_at, status FROM gu JOIN kegiatan USING(kode_kegiatan) UNION SELECT "LS" as "Kategori", kegiatan.program_kegiatan, created_at, status FROM ls JOIN kegiatan USING(kode_kegiatan) ORDER BY created_at DESC');
+        $idBPP = Auth::user()->bpp['id_bpp'];
+        $idgu = GU::where('id_bpp', $idBPP)->get();
+        $idls = LS::where('id_bpp', $idBPP)->get();
+        $dashboardBPP = DB::select('SELECT "GU" as "Kategori", kegiatan.program_kegiatan, created_at, status FROM gu JOIN kegiatan USING(kode_kegiatan) JOIN bpp USING(id_bpp) WHERE bpp.id_bpp = "'.$idBPP.'" UNION SELECT "LS" as "Kategori", kegiatan.program_kegiatan, created_at, status FROM ls JOIN kegiatan USING(kode_kegiatan) JOIN bpp USING(id_bpp) WHERE bpp.id_bpp = "'.$idBPP.'" ORDER BY created_at DESC');
 
-        return view('home',compact('users', 'tabelGU', 'tabelLS', 'kegiatan', 'dashboardBPP', 'bpp'));
+        $dashboardAll = DB::select('SELECT id_gu, bpp.nama_bpp, "GU" as "Kategori", kegiatan.program_kegiatan, created_at, status 
+        FROM gu JOIN kegiatan USING(kode_kegiatan) join bpp using(id_bpp) 
+        UNION SELECT id_ls, bpp.nama_bpp, "LS" as "Kategori", kegiatan.program_kegiatan, created_at, status 
+        FROM ls JOIN kegiatan USING(kode_kegiatan) join bpp using(id_bpp) ORDER BY created_at DESC');
+
+        $dashboardnotif = DB::select('SELECT id_gu, bpp.nama_bpp,"GU" as "Kategori", kegiatan.program_kegiatan, updated_at, status
+        FROM gu JOIN kegiatan USING(kode_kegiatan) join bpp using(id_bpp)
+        UNION SELECT id_ls, bpp.nama_bpp, "LS" as "Kategori", kegiatan.program_kegiatan, updated_at, status
+        FROM ls JOIN kegiatan USING(kode_kegiatan) join bpp using(id_bpp) ORDER BY updated_at DESC limit 5');
+
+        return view('home',compact('users', 'tabelGU', 'tabelLS', 'kegiatan', 'dashboardBPP', 'bpp', 'idgu', 'idls', 'dashboardAll', 'dashboardnotif'));
     }
 
     public function showPrinter() {
@@ -49,14 +63,7 @@ class HomeController extends Controller
 
     public function showPrintPreview() {
         return view('printer.file');
-    }
-
-    public function verifikasigu() {
-        return view('verifikasi.verifikasigu');
-    }
-
-    public function verifikasilu() {
-        return view('verifikasi.verifikasils');
+        // return view('table.tablegu');
     }
 
     public function autocomplete(Request $request){

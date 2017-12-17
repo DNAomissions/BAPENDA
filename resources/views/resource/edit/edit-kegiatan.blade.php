@@ -19,39 +19,30 @@
                         <div class="tab-content">
                             
                             <!--Dalam BPP-->
-                            <div role="tabpanel" class="tab-pane active" id="bpp">
+                            <div role="tabpanel" class="tab-pane active" id="kegiatan">
                                 <!--Tab BPP-->
                                 <div class="panel">
                                     <div class="panel-heading">
                                     <!-- Tabs and Pills Content -->
                                         <ul class="nav nav-tabs" role="tablist">
-                                            <li role="presentation"><a href="{{url('/home')}}">Tabel BPP</a></li>
-                                            <li role="presentation"><a href="{{url('/home')}}">Tambah BPP</a></li>
+                                            <li role="presentation"><a href="{{url('/home')}}">Tabel Kegiatan</a></li>
+                                            <li role="presentation"><a href="{{url('/home')}}">Tambah Kegiatan</a></li>
                                             <!--<li role="presentation" class="active"><a href="#editbpp" aria-controls="editbpp" role="tab" data-toggle="tab">Edit BPP</a></li>-->
                                         </ul>
                                     </div>
                                     <div class="panel-body">  
                                         <div class="tab-content"> 
                                             <div class="tab-pane active">                             
-                                                <form action="{{url('/update/bpp',$bpp->id_bpp)}}" method="POST">
+                                                <form action="{{url('/update/kegiatan',$kegiatan->id)}}" method="POST">
                                                 {!! csrf_field() !!}
                                                     <div class="form-group">
-                                                        <label for="nama_bpp">Nama : </label>
-                                                        <input type="text" class="form-control" id="nama_bpp" name="nama_bpp" value="{{$bpp->nama_bpp}}" required>                                                      
+                                                        <label for="kode_kegiatan">Kode Kegiatan : </label>
+                                                        <input type="text" class="form-control" id="kode_kegiatan" name="kode_kegiatan" value="{{$kegiatan->kode_kegiatan}}" required>                                                      
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="unit_kerja">Unit Kerja : </label>
-                                                        <input type="text" class="form-control" id="unit_kerja" name="unit_kerja" value="{{$bpp->unit_kerja}}" required>
+                                                        <label for="program_kegiatan">Program Kegiatan : </label>
+                                                        <input type="text" class="form-control" id="program_kegiatan" name="program_kegiatan" value="{{$kegiatan->program_kegiatan}}" required>
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label for="alamat">Alamat : </label>
-                                                        <input type="text" class="form-control" id="alamat" name="alamat" value="{{$bpp->alamat}}" required>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="no_telepon">No Telepon : </label>
-                                                        <input type="text" class="form-control" id="no_telepon" value="{{$bpp->no_telepon}}" name="no_telepon">
-                                                    </div>		
-                                                    <!-- {{Form::hidden('_method', 'PUT')}} -->
                                                     <button type="submit" class="btn btn-primary">UPDATE</button>
                                                 </form>
                                             </div>

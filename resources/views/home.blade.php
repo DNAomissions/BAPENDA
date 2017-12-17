@@ -5,11 +5,13 @@
         <script>
             $(document).ready(function(){
                 $("#tableDashboard").DataTable();
-                $("#tableGu").DataTable();
+                $("#tableGu").DataTable({
+                    "order" : [[2, "desc"]]
+                });
                 $("#tableLs").DataTable();
                 // Isi form input
-                $('.unitKerja').val('{{Auth::user()->bpp->unit_kerja}}')
-                $('.namaBPP').val('{{Auth::user()->bpp->nama_bpp}}');
+                $('.unitKerja').val('{{Auth::user()->bpp['unit_kerja']}}')
+                $('.namaBPP').val('{{Auth::user()->bpp['nama_bpp']}}');
                 // Fitur semacam autocomplete
                 $('#programKegiatanGU')
                     .editableSelect()
@@ -47,18 +49,17 @@
                 $('#namaBPP')
                     .editableSelect()
                     .on('select.editable-select',function(e,sl){
-                            $('#id_bpp').val(sl.data('id'));
+                            $('#id_bpp').val(sl.data('id_ls')); // id atau id_ls
                 });
             });
         </script>
     @stop
 @endif
 
-@if(Auth::user()->level->level == 'admin')
+@if(Auth::user()->level->level == 'verifikator')
     @section('js')
         <script>
             $(document).ready(function(){
-
                 // Untuk Table Verifikator
                 $("#tableRevisi-v").DataTable();
                 $("#tableGu-v").DataTable();
@@ -178,33 +179,42 @@
                             <div class="panel-heading">
                                 <!-- Tabs and Pills Menu -->
                                 <ul class="nav nav-tabs" role="tablist">
-                                    <li role="presentation" class="active"><a href="#dashboard-v" aria-controls="dashboard-v" role="tab" data-toggle="tab">Dashboard</a></li>
-                                    <li role="presentation"><a href="#gu-v" aria-controls="gu-v" role="tab" data-toggle="tab">Ganti Uang (GU)</a></li>
+                                    <!-- <li role="presentation" class="active"><a href="#dashboard-v" aria-controls="dashboard-v" role="tab" data-toggle="tab">Dashboard</a></li> -->
+                                    <li role="presentation" class="active"><a href="#gu-v" aria-controls="gu-v" role="tab" data-toggle="tab">Ganti Uang (GU)</a></li>
                                     <li role="presentation"><a href="#ls-v" aria-controls="ls-v" role="tab" data-toggle="tab">Langsung (LS)</a></li>
+                                    <li role="presentation"><a href="#cetak" aria-controls="cetak" role="tab" data-toggle="tab">Cetak</a></li>
                                 </ul> 
                             </div>
 
                             <div class="panel-body tabs-body-custom">
                                 <!-- Tabs and Pills Content -->
                                 <div class="tab-content">
-                                    <div role="tabpanel" class="tab-pane active" id="dashboard-v">
-                                        @include('resource.verifikator.table-pengajuan')
-                                    </div>
-                                    <div role="tabpanel" class="tab-pane" id="gu-v">
+
+                                    <!-- <div role="tabpanel" class="tab-pane active" id="dashboard-v"> -->
+                                        <!-- @include('resource.verifikator.table-pengajuan') -->
+                                    <!-- </div> -->
+
+                                    <div role="tabpanel" class="tab-pane active" id="gu-v">
                                         @include('resource.verifikator.table-gu')
                                     </div>
                                     <div role="tabpanel" class="tab-pane" id="ls-v">
                                         @include('resource.verifikator.table-ls')
                                     </div>
+
+                                    <div role="tabpanel" class="tab-pane" id="cetak">
+                                        <!-- @include('resource.table.table-cetak') -->
+                                    </div>
                                 </div>
+
+                                
                             </div>  
                         @endif 
                         @if(Auth::user()->level->level == 'bpp')
                             <div class="panel-heading">
                                 <!-- Tabs and Pills Menu -->
                                 <ul class="nav nav-tabs" role="tablist">
-                                    <li role="presentation" class="active"><a href="#dashboard" aria-controls="dashboard" role="tab" data-toggle="tab">Dashboard</a></li>
-                                    <li role="presentation"><a href="#gu" aria-controls="gu" role="tab" data-toggle="tab">Ganti Uang (GU)</a></li>
+                                    <!-- <li role="presentation" class="active"><a href="#dashboard" aria-controls="dashboard" role="tab" data-toggle="tab">Dashboard</a></li> -->
+                                    <li role="presentation" class="active"><a href="#gu" aria-controls="gu" role="tab" data-toggle="tab">Ganti Uang (GU)</a></li>
                                     <li role="presentation"><a href="#ls" aria-controls="ls" role="tab" data-toggle="tab">Langsung (LS)</a></li>
                                 </ul> 
                             </div>
@@ -212,10 +222,14 @@
                             <div class="panel-body tabs-body-custom">
                                 <!-- Tabs and Pills Content -->
                                 <div class="tab-content">
-                                    <div role="tabpanel" class="tab-pane active" id="dashboard">
-                                        @include('resource.table.table-dashboard')
-                                    </div>
-                                    <div role="tabpanel" class="tab-pane" id="gu">
+
+                                    <!-- Dashboard -->
+                                    <!-- <div role="tabpanel" class="tab-pane active" id="dashboard"> -->
+                                        <!-- @include('resource.table.table-dashboard') -->
+                                    <!-- </div> -->
+                                
+                                
+                                    <div role="tabpanel" class="tab-pane active" id="gu">
                                         <div class="tab-content tab-padding">
                                             <ul class="nav nav-tabs" role="tablist">
                                                 <li role="presentation" class="active"><a href="#table-gu" aria-controls="tabelLangsung" role="tab" data-toggle="tab">Tabel Langsung</a></li>

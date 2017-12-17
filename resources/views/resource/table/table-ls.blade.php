@@ -17,7 +17,7 @@
                             </thead>
                             <tbody>
                                 <?php $no=1; ?>
-                                @foreach($tabelLS as $lsu)
+                                @foreach($idls as $lsu)
                                     <tr>
                                         <td><?php echo $no;$no++; ?></td>
                                         <td>{{$lsu->kegiatan->program_kegiatan}}</td>

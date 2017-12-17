@@ -13,7 +13,7 @@
                             <th>Username</th>
                             <th>Email</th>
                             <th>Level</th>
-                            <th>Aksi</th>
+                            <!--<th>Aksi</th>-->
                         </tr>
                     </thead>
                     <tbody>
@@ -25,10 +25,10 @@
                             <td>{{$user->username}}</td>
                             <td>{{$user->email}}</td>
                             <td>{{$user->level->level}}</td>
-                            <td>
-                                <button class="btn btn-success">UPDATE</button>
-                                <button class="btn btn-danger">DELETE</button>
-                            </td>
+                            <!--<td>
+                                <a href="/edit/user/{{$user->id}}" class="btn btn-success">EDIT</a>
+                                <a href="/delete/user/{{$user->id}}" class="btn btn-danger">DELETE</a>
+                            </td>-->
                         </tr>
                         <?php $no++; ?>
                         @endforeach

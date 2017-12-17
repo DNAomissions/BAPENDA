@@ -23,28 +23,51 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+// Pdf & Print
 Route::get('/printer/view', 'HomeController@showPrinter');
 Route::get('/printer/print', 'HomeController@showPrintPreview');
 
-Route::get('/inputgu', function() {
-    return view('input_gu');
+
+// Test
+Route::get('/t1', function() {
+    return view('table.tablegu');
 });
 
+Route::get('/t2', function() {
+    return view('table.tablels');
+});
 
 // Verifikasi
-Route::get('/verifikasigu', 'HomeController@verifikasigu');
-Route::get('/verifikasils', 'HomeController@verifikasils');
-Route::get('/verifikator/show/{id}', 'VerifikatorController@show');
+Route::get('/verifikator/show_gu/{id}', 'VerifikatorController@show_gu');
+Route::get('/verifikator/show_ls/{id}', 'VerifikatorController@show_ls');
 
-// Route untuk Fitur Admin
+Route::post('/verifikasi/gu/{id}', 'VerifikatorController@store_gu');
+Route::post('/verifikasi/ls/{id}', 'VerifikatorController@store_ls');
+
+// CRUD Bpp, User, Kegiatan - Fitur Admin
 Route::post('/store/bpp', 'AdminController@storeBPP');
 Route::post('/store/kegiatan', 'AdminController@storeKegiatan');
 Route::post('/store/user', 'AdminController@storeUser');
 
-Route::get('/edit/bpp/{id}', 'AdminController@editBPP');
-Route::post('/update/bpp/{id}', 'AdminController@updateBPP');
+Route::get('/edit/bpp/{id_bpp}', 'AdminController@editBPP');
+Route::get('/edit/kegiatan/{id}', 'AdminController@editKegiatan');
 
-// Input Pengajuan
+Route::post('/update/bpp/{id_bpp}', 'AdminController@updateBPP');
+Route::post('/update/kegiatan/{id}', 'AdminController@updateKegiatan');
+
+Route::get('/delete/bpp/{id_bpp}', 'AdminController@destroyBPP');
+Route::get('/delete/kegiatan/{id}', 'AdminController@destroyKegiatan');
+
+// Input Pengajuan - Fitur User/Bpp
 Route::get('/autocomplete', 'HomeController@autocomplete');
 Route::post('/gu/insert', 'guController@store');
 Route::post('/ls/insert', 'lsController@store');
+
+// Menampilkan Gambar
+Route::get('storage/app/public/suratPermohonan/{gu}', function($image = null)
+{
+    // $file = Storage::get($image);
+    // $mimetype = Storage::mimeType($image);
+    // return response($file, 200)->header('Content-Type', $mimetype);
+    return (explode(" ",$str));
+});

@@ -21,12 +21,14 @@
     <div class="container">
       <div class="jumbotron">
         <h3><center>KELENGKAPAN SPP LS PENGADAAN BARANG/JASA</center></h3>
-        <form>
+        <form action="{{url('/verifikasi/ls/{id}')}}" method="post">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <input type="hidden" class="form-control" id="id_ls" name="id_ls" value="{{$ls->id_ls}}" readonly>
             <div class="form-group">
               <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-2"><label for="nospp">No.SPP</label></div>
-                <div class="col-md-8"><input type="text" class="form-control" id="nospp"></div>
+                <div class="col-md-8"><input type="text" class="form-control" id="nospp" name="nospp" value="{{ $ls->no_spp }}" readonly></div>
               </div>
             </div>
             <div class="form-group">
@@ -34,7 +36,7 @@
                 <div class="row">
                   <div class="col-md-1"></div>
                   <div class="col-md-2"><label for="perusahaan">Perusahaan</label></div>
-                  <div class="col-md-8"><input type="text" class="form-control" id="perusahaan"></div>
+                  <div class="col-md-8"><input type="text" class="form-control" id="perusahaan" value="{{ $ls->perusahaan }}" readonly></div>
                 </div>
               </div>
             </div>
@@ -42,56 +44,56 @@
               <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-2"><label for="pekerjaan">Pekerjaan</label></div>
-                <div class="col-md-8"><input type="text" class="form-control" id="pekerjaan"></div>
+                <div class="col-md-8"><input type="text" class="form-control" id="pekerjaan" value="{{ $ls->pekerjaan }}" readonly></div>
               </div>
             </div>
             <div class="form-group">
               <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-2"><label for="kodekegiatan">Kode Kegiatan</label></div>
-                <div class="col-md-8"><input type="text" class="form-control" id="kodekegiatan"></div>
+                <div class="col-md-8"><input type="text" class="form-control" id="kodekegiatan" value="{{ $ls->kode_kegiatan }}" readonly></div>
               </div>
             </div>
             <div class="form-group">
               <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-2"><label for="kegiatan">Kegiatan</label></div>
-                <div class="col-md-8"><input type="text" class="form-control" id="kegiatan"></div>
+                <div class="col-md-8"><input type="text" class="form-control" id="kegiatan" value="{{ $ls->kegiatan->program_kegiatan }}" readonly></div>
               </div>
             </div>
             <div class="form-group">
               <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-2"><label for="dpa">DPA</label></div>
-                <div class="col-md-8"><input type="text" class="form-control" id="dpa"></div>
+                <div class="col-md-8"><input type="text" class="form-control" id="dpa" value="{{ $ls->dpa }}" readonly></div>
               </div>
             </div>
             <div class="form-group">
               <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-2"><label for="hps">HPS</label></div>
-                <div class="col-md-8"><input type="text" class="form-control" id="hps"></div>
+                <div class="col-md-8"><input type="text" class="form-control" id="hps" value="{{ $ls->hps }}" readonly></div>
               </div>
             </div>
             <div class="form-group">
               <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-2"><label for="penawaran">Penawaran</label></div>
-                <div class="col-md-8"><input type="text" class="form-control" id="penawaran"></div>
+                <div class="col-md-8"><input type="text" class="form-control" id="penawaran" value="{{ $ls->penawaran }}" readonly></div>
               </div>
             </div>
             <div class="form-group">
               <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-2"><label for="spk">SPK</label></div>
-                <div class="col-md-8"><input type="text" class="form-control" id="spk"></div>
+                <div class="col-md-8"><input type="text" class="form-control" id="spk" value="{{ $ls->spk }}" readonly></div>
               </div>
             </div>
             <div class="form-group">
               <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-2"><label for="mp">MP</label></div>
-                <div class="col-md-8"><input type="text" class="form-control" id="mp"></div>
+                <div class="col-md-8"><input type="text" class="form-control" id="mp" value="{{ $ls->mp }}" readonly></div>
               </div>
             </div>
             <div class="container">
@@ -1028,15 +1030,14 @@
               <div class="row">
                 <div class="col-md-2"><label for="catatan">Catatan</label></div>
               </div>
-                <textarea class="form-control" rows="20" id="catatan"></textarea>
+                <textarea class="form-control" rows="20" id="catatan" name="catatan"></textarea>
             </div><br>
-            <div class="form-group">
-              <div class="row">
-                  <div class="col-md-9"></div>
-                  <button type="button" class="btn btn-success col-md-1"><a href="home">Verifikasi</a>
-                  <button type="button" class="btn btn-warning col-md-1"><a href="home">Revisi</a></button>
-                  <button type="button" class="btn btn-default col-md-1"><a href="home">Cancel</a></button>
+            <div class="form-group pull-right">
+              <button class="btn btn-primary">Submit</button>
+              <a class="btn btn-danger" href="/home">Cancel</a>
+            </div>
               </div>
+            </div>
         </form>
       </div>
     </div>

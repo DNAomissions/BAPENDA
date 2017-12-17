@@ -20,8 +20,7 @@
                             <td>{{$keg->kode_kegiatan}}</td>
                             <td>{{$keg->program_kegiatan}}</td>
                             <td>
-                                <button class="btn btn-success">UPDATE</button>
-                                <button class="btn btn-danger">DELETE</button>
+                                <a href="/edit/kegiatan/{{$keg->id}}" class="btn btn-success">EDIT</a>
                             </td>
                         </tr>
                         @endforeach

@@ -4,11 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class LS extends Model
+class VerifikasiLS extends Model
 {
     //
-    protected $table = "ls";
-    protected $primaryKey = 'id_ls';
+    protected $table = "verif_ls";
+    protected $primaryKey = 'id_verif';
     protected $fillable = [
         'id_bpp',
         'no_spp',
@@ -51,16 +51,4 @@ class LS extends Model
         'created_at',
         'updated_at'
     ];
-
-    public function kegiatan(){
-        return $this->belongsTo('App\Kegiatan', 'kode_kegiatan');
-    }
-
-    public function bpp(){
-        return $this->belongsTo('App\BPP', 'id_bpp');
-    }
-
-    public function verif() {
-        return $this->belongTo('App\VerifikasiLS', 'id_verif');
-    }
 }

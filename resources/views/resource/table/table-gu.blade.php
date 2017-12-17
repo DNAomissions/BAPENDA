@@ -17,7 +17,7 @@
                             </thead>
                             <tbody>
                                 <?php $no=1; ?>
-                                @foreach($tabelGU as $tgu)
+                                @foreach($idgu as $tgu)
                                     <tr>
                                         <td><?php echo $no;$no++; ?></td>
                                         <td>{{$tgu->kegiatan->program_kegiatan}}</td>

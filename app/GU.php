@@ -31,4 +31,7 @@ class GU extends Model
         return $this->belongsTo('App\Kegiatan','kode_kegiatan');
     }
 
+    public function verif() {
+        return $this->belongTo('App\VerifikasiGU', 'id_verif');
+    }
 }

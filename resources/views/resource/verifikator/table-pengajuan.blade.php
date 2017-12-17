@@ -18,24 +18,24 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>GU</td>
-                            <td>Deni</td>
-                            <td>macul</td>
-                            <td>12 Desember 2017</td>
-                            <td>Sedang diproses/Pengajuan Ulang</td>
-                            <td><a href="{{url('/verifikator/show',1)}}">Verifikasi</a></td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>LS</td>
-                            <td>Jajang</td>
-                            <td>makan bersama</td>
-                            <td>11 Desember 2017</td>
-                            <td>Sedang diproses/Pengajuan Ulang</td>
-                            <td><a href="/show/{{2}}">Verifikasi</a></td>
-                        </tr>
+                        <?php $no=1; ?>
+                            @foreach($dashboardAll as $dbpp)
+                                <tr>
+                                    <td><?php echo $no;$no++; ?></td>
+                                    <td>{{$dbpp->Kategori}}</td>
+                                    <td>{{$dbpp->nama_bpp}}</td>
+                                    <td>{{$dbpp->program_kegiatan}}</td>
+                                    <td>{{$dbpp->created_at}}</td>
+                                    <td>{{$dbpp->status}}</td>
+                                    @if($dbpp->Kategori == 'GU')
+                                        <td><a href="{{url('/verifikator/show_gu',base64_encode($dbpp->id_gu))}}">Verifikasi</a></td>
+                                    @elseif($dbpp->Kategori == 'LS')
+                                        <td><a href="{{url('/verifikator/show_ls',base64_encode($dbpp->id_gu))}}">Verifikasi</a></td>
+                                    @else
+                                        {{redirect('/home')}}
+                                    @endif
+                                </tr>
+                            @endforeach
                     </tbody>
                 </table>
             </div>
