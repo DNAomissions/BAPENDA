@@ -33,8 +33,8 @@ class HomeController extends Controller
     {
         $users = User::all();//Manggil semua dari table users
 
-        $tabelGU = GU::all();
-        $tabelLS = LS::all();
+        $tabelGU = GU::orderBy('created_at','DESC')->get();
+        $tabelLS = LS::orderBy('created_at','DESC')->get();
         $kegiatan = Kegiatan::all();//Manggil semua dari table kegiatan
 
         $bpp = BPP::all();
@@ -48,6 +48,7 @@ class HomeController extends Controller
         FROM gu JOIN kegiatan USING(kode_kegiatan) join bpp using(id_bpp) 
         UNION SELECT id_ls, bpp.nama_bpp, "LS" as "Kategori", kegiatan.program_kegiatan, created_at, status 
         FROM ls JOIN kegiatan USING(kode_kegiatan) join bpp using(id_bpp) ORDER BY created_at DESC');
+        // $dashboardBPP = DB::select('SELECT "GU" as "Kategori", kegiatan.program_kegiatan, id_gu as "id_pengajuan" , created_at, status FROM gu JOIN kegiatan USING(kode_kegiatan) UNION SELECT "LS" as "Kategori", kegiatan.program_kegiatan, id_ls as "id_pengajuan" ,created_at, status FROM ls JOIN kegiatan USING(kode_kegiatan) ORDER BY created_at DESC');
 
         $dashboardnotif = DB::select('SELECT id_gu, bpp.nama_bpp,"GU" as "Kategori", kegiatan.program_kegiatan, updated_at, status
         FROM gu JOIN kegiatan USING(kode_kegiatan) join bpp using(id_bpp)

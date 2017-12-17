@@ -63,6 +63,7 @@ Route::get('/autocomplete', 'HomeController@autocomplete');
 Route::post('/gu/insert', 'guController@store');
 Route::post('/ls/insert', 'lsController@store');
 
+<<<<<<< HEAD
 // Menampilkan Gambar
 Route::get('storage/app/public/suratPermohonan/{gu}', function($image = null)
 {
@@ -71,3 +72,7 @@ Route::get('storage/app/public/suratPermohonan/{gu}', function($image = null)
     // return response($file, 200)->header('Content-Type', $mimetype);
     return (explode(" ",$str));
 });
+=======
+//BPP
+Route::get('/user/edit/bpp/{id}','UserController@show');
+>>>>>>> 930ddf4d581327561c24be12dd0e90bc2e3083a4

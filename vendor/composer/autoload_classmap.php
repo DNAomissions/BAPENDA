@@ -17,7 +17,10 @@ return array(
     'App\\Http\\Controllers\\Auth\\ResetPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ResetPasswordController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
+<<<<<<< HEAD
     'App\\Http\\Controllers\\VerifikatorController' => $baseDir . '/app/Http/Controllers/VerifikatorController.php',
+=======
+>>>>>>> 930ddf4d581327561c24be12dd0e90bc2e3083a4
     'App\\Http\\Controllers\\guController' => $baseDir . '/app/Http/Controllers/guController.php',
     'App\\Http\\Controllers\\lsController' => $baseDir . '/app/Http/Controllers/lsController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',

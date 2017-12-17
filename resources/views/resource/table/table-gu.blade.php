@@ -13,6 +13,7 @@
                                     <th>Nama Kegiatan</th>
                                     <th>Tanggal Pengajuan</th>
                                     <th>Status</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -23,6 +24,7 @@
                                         <td>{{$tgu->kegiatan->program_kegiatan}}</td>
                                         <td>{{$tgu->created_at}}</td>
                                         <td>{{$tgu->status}}</td>
+                                        <td><a href="{{url('/user/edit/bpp',base64_encode($tgu->id_gu))}}" target="_blank" class="btn btn-primary">EDIT</a></td>
                                     </tr>
                                 @endforeach
                             </tbody>
