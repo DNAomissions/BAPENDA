@@ -26,8 +26,8 @@
         <div class="form-group">
 			<label for="level">Level : </label>
 			<select class="form-control" style="height:37px" id="level" name="level">
-				<option value="2">User</option>
-				<option value="3">Verifikator</option>
+				<option value="2">Verifikator</option>
+				<option value="3">User</option>
 			</select>
 		</div>
 		<button type="submit" class="btn btn-primary">Simpan</button>

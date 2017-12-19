@@ -18,12 +18,16 @@
                             <tbody>
                                 <?php $no=1; ?>
                                 @foreach($tabelLS as $lsu)
-                                    <tr>
-                                        <td><?php echo $no;$no++; ?></td>
-                                        <td>{{$lsu->kegiatan->program_kegiatan}}</td>
-                                        <td>{{$lsu->created_at}}</td>
-                                        <td>{{$lsu->status}}</td>
-                                    </tr>
+                                    @if($lsu->id_bpp == Auth::user()->id_bpp)
+                                        <tr>
+                                            <td><?php echo $no;$no++; ?></td>
+                                            <td>{{$lsu->kegiatan->program_kegiatan}}</td>
+                                            <td>{{$lsu->created_at}}</td>
+                                            <td>{{$lsu->status}}</td>
+                                        </tr>
+                                    @else
+
+                                    @endif
                                 @endforeach
                             </tbody>
                         </table>

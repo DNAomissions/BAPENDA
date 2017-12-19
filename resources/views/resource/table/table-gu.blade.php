@@ -19,13 +19,17 @@
                             <tbody>
                                 <?php $no=1; ?>
                                 @foreach($tabelGU as $tgu)
-                                    <tr>
-                                        <td><?php echo $no;$no++; ?></td>
-                                        <td>{{$tgu->kegiatan->program_kegiatan}}</td>
-                                        <td>{{$tgu->created_at}}</td>
-                                        <td>{{$tgu->status}}</td>
-                                        <td><a href="{{url('/user/edit/bpp',base64_encode($tgu->id_gu))}}" target="_blank" class="btn btn-primary">EDIT</a></td>
-                                    </tr>
+                                    @if($tgu->id_bpp == Auth::user()->id_bpp)
+                                        <tr>
+                                            <td><?php echo $no;$no++; ?></td>
+                                            <td>{{$tgu->kegiatan->program_kegiatan}}</td>
+                                            <td>{{$tgu->created_at}}</td>
+                                            <td>{{$tgu->status}}</td>
+                                            <td><a href="{{url('/user/edit/bpp',base64_encode($tgu->id_gu))}}" target="_blank" class="btn btn-primary">EDIT</a></td>
+                                        </tr>
+                                    @else
+
+                                    @endif
                                 @endforeach
                             </tbody>
                         </table>

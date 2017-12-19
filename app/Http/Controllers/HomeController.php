@@ -32,13 +32,13 @@ class HomeController extends Controller
     {
         $users = User::all();//Manggil semua dari table users
 
-        $tabelGU = GU::orderBy('created_at','DESC')->get();
-        $tabelLS = LS::orderBy('created_at','DESC')->get();
+        $tabelGU = GU::orderBy('updated_at','DESC')->get();
+        $tabelLS = LS::orderBy('updated_at','DESC')->get();
         $kegiatan = Kegiatan::all();//Manggil semua dari table kegiatan
         
         $bpp = BPP::all();
 
-        $dashboardBPP = DB::select('SELECT "GU" as "Kategori", kegiatan.program_kegiatan, id_gu as "id_pengajuan" , created_at, status FROM gu JOIN kegiatan USING(kode_kegiatan) UNION SELECT "LS" as "Kategori", kegiatan.program_kegiatan, id_ls as "id_pengajuan" ,created_at, status FROM ls JOIN kegiatan USING(kode_kegiatan) ORDER BY created_at DESC');
+        $dashboardBPP = DB::select('SELECT "GU" as "Kategori", kegiatan.program_kegiatan, id_bpp, id_gu as "id_pengajuan" , created_at, updated_at, status FROM gu JOIN kegiatan USING(kode_kegiatan) UNION SELECT "LS" as "Kategori", kegiatan.program_kegiatan, id_bpp, id_ls as "id_pengajuan" ,created_at, updated_at, status FROM ls JOIN kegiatan USING(kode_kegiatan) ORDER BY updated_at DESC');
 
         return view('home',compact('users', 'tabelGU', 'tabelLS', 'kegiatan', 'dashboardBPP', 'bpp'));
     }

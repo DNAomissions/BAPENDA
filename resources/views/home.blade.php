@@ -17,14 +17,15 @@
                             $('#kodeKegiatanGU').val(sl.data('cc'));
                 });
 
-                $('#programKegiatanLS')
+
+               $('#programKegiatanLS')
                     .editableSelect()
                     .on('select.editable-select',function(e,sl){
                             $('#kodeKegiatanLS').val(sl.data('cc'));
                 });
 
                 $('.resetButton').on('click', function(){
-                    var rbutton = $(this).attr('data-rbutton');
+                    var rbutton = $(this).data('rbutton');
                     $('#'+rbutton).wrap('<form>').closest('form').get(0).reset();
                     $('#'+rbutton).unwrap();
                 });

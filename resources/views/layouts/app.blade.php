@@ -29,6 +29,12 @@
 
     <link rel="stylesheet" href="{{ asset('jquery/jquery-ui.css') }}">
     <link rel="stylesheet" href="{{asset('jquery/jquery-editable-select.min.css')}}">
+
+    <!-- Gallery -->
+    <link rel="stylesheet" type="text/css" href="{{asset('gallery/blueimp-gallery.min.css')}}">
+
+    @yield('css')
+
 </head>
 <body>
     <div id="app">
@@ -36,6 +42,19 @@
 
         <div class="m-b-md"></div>
         @yield('content')
+
+
+    <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+    <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+        <!-- The container for the modal slides -->
+        <div class="slides"></div>
+        <!-- Controls for the borderless lightbox -->
+        <h3 class="title">Title</h3>
+        <a class="prev">‹</a>
+        <a class="next">›</a>
+        <a class="close">&times;</a>
+        <!-- The modal dialog, which will be used to wrap the lightbox content -->    
+    </div>
     </div>
 
     <!-- Scripts -->
@@ -48,6 +67,9 @@
     <script src="{{ asset('vendor/datatables/dataTables.bootstrap4.js') }}"></script>
     <script src="{{ asset('jquery/jquery-ui.min.js') }}"></script>
     <script src="{{ asset('jquery/jquery-editable-select.min.js')}}"></script>
+
+    <!-- Gallery -->
+    <script type="text/javascript" src="{{ asset('gallery/blueimp-gallery.min.js')}}"></script>
 
     @yield('js')
 </body>

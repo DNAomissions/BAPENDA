@@ -18,13 +18,17 @@
                     <tbody>
                         <?php $no=1; ?>
                         @foreach($dashboardBPP as $dBPP)
-                        <tr>
-                            <td>{{$no}}</td>
-                            <td>{{$dBPP->Kategori}}</td>
-                            <td>{{$dBPP->program_kegiatan}}</td>
-                            <td>{{$dBPP->created_at}}</td>
-                            <td>{{$dBPP->status}}</td>
-                        </tr>
+                            @if($dBPP->id_bpp == Auth::user()->id_bpp)
+                                <tr>
+                                    <td>{{$no}}</td>
+                                    <td>{{$dBPP->Kategori}}</td>
+                                    <td>{{$dBPP->program_kegiatan}}</td>
+                                    <td>{{$dBPP->created_at}}</td>
+                                    <td>{{$dBPP->status}}</td>
+                                </tr>
+                            @else
+
+                            @endif
                         <?php $no++; ?>
                         @endforeach
                     </tbody>
